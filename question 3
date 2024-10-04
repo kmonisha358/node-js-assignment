@@ -1,0 +1,25 @@
+3. Develop a REPL Program to Find Odd or Even Numbers (Node.js)
+const readline = require('readline');
+const rl = readline.createInterface({
+ input: process.stdin,
+ output: process.stdout
+});
+rl.setPrompt('Enter a number: ');
+rl.prompt();
+rl.on('line', (input) => {
+ const num = parseInt(input, 10);
+ if (isNaN(num)) {
+ console.log('Please enter a valid number.');
+ } else if (num % 2 === 0) {
+ console.log(`${num} is an even number.`);
+ } else {
+ console.log(`${num} is an odd number.`);
+ }
+ rl.prompt();
+}).on('close', () => {
+ console.log('REPL closed
+rl.prompt();
+}).on('close', () => {
+ console.log('REPL closed.');
+ process.exit(0);
+});
